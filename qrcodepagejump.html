@@ -1,0 +1,29 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>sample</title>
+</head>
+<body>
+<script language="javascript" type="text/javascript"> 
+
+// 获取参数并改为新的连接
+    function changeUrl(name) {
+			var locUrl = window.location.href;
+			var queryStrIndex = locUrl.indexOf(name)+name.length+1;
+			var QueryNum = locUrl.slice(queryStrIndex);
+			var newUrl = "http://127.0.0.1:8080/japan_api/onepay/tpa/line/fnoget?fno=" + QueryNum;
+			console.log(QueryNum);
+			window.location.href = newUrl;
+		}
+  
+
+    
+// 测试用当前地址
+    //window.location.href = "https://github.com/square1983/line-test/1.html?sno=12345678";
+
+//延迟5s跳转到新地址    
+    setTimeout("changeUrl('sno')", 5000); 
+    
+    
+</script>
+</body>
+</html>
